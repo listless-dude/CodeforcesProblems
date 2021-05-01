@@ -12,6 +12,7 @@ int main()
     cin >> s;
 
     string res;
+    int countLower = 0, countUpper = 0;
     for (int i = 0; i < s.length(); ++i)
     {
         
