@@ -4,19 +4,31 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int n,i,maxx,minn,index_max,index_min;
+    scanf("%d",&n);
     int a[n];
-    int count = 0;
-    for (int i = 0; i < n; ++i)
+    for(i=0; i<n; i++)
     {
-        cin >> a[i];
+        scanf("%d",&a[i]);
     }
-    int count = 0;
-
-    for (int i = 0; i < n; ++i)
+    maxx=0;
+    minn=101;
+    for(i=0; i<n; i++)
     {
-        
+        if(a[i]>maxx)
+        {
+            maxx=a[i];
+            index_max=i;
+        }
+        if(a[i]<=minn)
+        {
+            minn=a[i];
+            index_min=i;
+        }
     }
+    n=n-1;
+    if(index_max>index_min)
+        index_min=index_min+1;
+    printf("%d\n",index_max+n-index_min);
     return 0;
 }
